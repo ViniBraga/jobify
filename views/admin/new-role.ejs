@@ -1,0 +1,25 @@
+<%- include('header')%>
+
+<h2>
+    New Role:
+    <a href="/admin/roles">Roles</a>
+</h2>
+<div>
+    <form method="POST">
+        <label>Title:</label>
+        <input type="text" name="title">
+        <br>
+        <label>Description:<label>
+        <textarea name="description"></textarea>
+        <br>
+        <label>Category:</label>
+        <select name="category">
+            <% categories.forEach(category => { %>
+                <option value="<%= category.id %>"><%= category.name %><option>
+            <% }) %>
+        </select>
+        <button>Save</button>
+    </form>
+</div>
+
+<%- include('footer')%>

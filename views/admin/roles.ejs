@@ -1,0 +1,19 @@
+<%- include('header')%>
+
+<h2>
+    Admin Roles:
+    <a href="/admin/roles/new">New Role</a>
+</h2>
+<div>
+    <ul>
+        <% roles.forEach(role => { %>
+        <li>
+            <%- role.title %>
+            <a href="/admin/roles/delete/<%- role.id%>">Delete</a>
+            <a href="/admin/roles/edit/<%- role.id%>">Edit</a>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+
+<%- include('footer')%>
